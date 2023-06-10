@@ -108,9 +108,6 @@ You should use
 
 ### Added dependencies
 
-- gulp@4.0.2 (for Creative Tim copyrights)
-- gulp-append-prepend@1.0.8 (for Creative Tim copyrights)
-
 ### Updated dependencies
 
 ```
@@ -200,6 +197,3 @@ _Warnings might appear while doing an npm install - they do not affect the UI or
 ## [1.0.0] 2018-10-12
 
 ### Original Release
-
-- Added Reactstrap as base framework
-- Added design from Paper Dashboard 2 by Creative Tim

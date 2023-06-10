@@ -1,21 +1,4 @@
-/*!
 
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 
 // reactstrap components
@@ -114,28 +97,6 @@ function Upgrade() {
                       <td className="text-center">From $49</td>
                     </tr>
                     <tr>
-                      <td className="text-center" />
-                      <td className="text-center">
-                        <Button
-                          className="btn-round disabled"
-                          color="default"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Current Version
-                        </Button>
-                      </td>
-                      <td className="text-center">
-                        <Button
-                          className="btn-round"
-                          color="primary"
-                          href="https://www.creative-tim.com/product/paper-dashboard-2-pro?ref=pd-free-upgrade-live"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          Upgrade to PRO
-                        </Button>
-                      </td>
                     </tr>
                   </tbody>
                 </Table>
