@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import {
   Button,
@@ -13,7 +13,6 @@ import {
 } from "reactstrap";
 
 function FormUnit() {
-  
   const [modal, setModal] = useState(false);
   const [nestedModal, setNestedModal] = useState(false);
   const [closeAll, setCloseAll] = useState(false);
@@ -22,7 +21,7 @@ function FormUnit() {
   const toggleNested = () => {
     setNestedModal(!nestedModal);
     setCloseAll(false);
-  };
+  }
   const toggleAll = () => {
     setNestedModal(!nestedModal);
     setCloseAll(true);
@@ -31,6 +30,7 @@ function FormUnit() {
   return (
     <>
       <div className="content">
+
         <Button color="danger" onClick={toggle}>
           Add Unit
         </Button>
