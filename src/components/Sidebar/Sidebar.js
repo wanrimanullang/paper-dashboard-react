@@ -2,17 +2,13 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Nav } from "reactstrap";
-// javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
-
-import logo from "logo.svg";
 
 var ps;
 
 function Sidebar(props) {
   const location = useLocation();
   const sidebar = React.useRef();
-  // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };

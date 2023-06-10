@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 
 
-function Tables() {
+function Position() {
   return (
     <>
       <div className="content">
@@ -18,16 +18,14 @@ function Tables() {
           <Col md="12">
             <Card>
               <CardHeader>
-                <CardTitle tag="h4">Table Employees</CardTitle>
+                <CardTitle tag="h4">Table Position</CardTitle>
               </CardHeader>
               <CardBody>
                 <Table responsive>
                   <thead className="text-primary">
                     <tr>
                       <th>Name</th>
-                      <th>Units</th>
-                      <th>Job Position</th>
-                      <th className="text-right">Create at</th>
+                      <th>Count</th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -41,4 +39,4 @@ function Tables() {
   );
 }
 
-export default Tables;
+export default Position;

@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+import { Form, Button } from "react-bootstrap";
 import useAuth from "../hooks/useAuth";
 
 const Login = () => {
@@ -13,10 +14,16 @@ const Login = () => {
     handleLogout,
   } = useAuth();
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     handleLogin();
   };
+
+  if (isLoggedIn) {
+    navigate("/admin/dashboard");
+  }
 
   return (
     <div className="container mt-5">
