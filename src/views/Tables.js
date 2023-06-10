@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 // reactstrap components
 import {
@@ -12,6 +13,31 @@ import {
 } from "reactstrap";
 
 function Tables() {
+  const [employees, setEmployees] = useState([]);
+
+  useEffect(() => {
+    const fetchEmployees = async () => {
+      try {
+        const token = '1|fN26BPUk1tdU855MRnqrtgJwf077wV7djwvHcAKw';
+
+        const config = {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        };  
+
+        const response = await axios.get('http://localhost:8000/api/profile', config);
+        setEmployees(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchEmployees();
+  }, []);
+
+
+
   return (
     <>
       <div className="content">
@@ -32,48 +58,9 @@ function Tables() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>Dakota Rice</td>
-                      <td>Niger</td>
-                      <td>Oud-Turnhout</td>
-                      <td className="text-right">$36,738</td>
-                    </tr>
-                    <tr>
-                      <td>Minerva Hooper</td>
-                      <td>Curaçao</td>
-                      <td>Sinaai-Waas</td>
-                      <td className="text-right">$23,789</td>
-                    </tr>
-                    <tr>
-                      <td>Sage Rodriguez</td>
-                      <td>Netherlands</td>
-                      <td>Baileux</td>
-                      <td className="text-right">$56,142</td>
-                    </tr>
-                    <tr>
-                      <td>Philip Chaney</td>
-                      <td>Korea, South</td>
-                      <td>Overland Park</td>
-                      <td className="text-right">$38,735</td>
-                    </tr>
-                    <tr>
-                      <td>Doris Greene</td>
-                      <td>Malawi</td>
-                      <td>Feldkirchen in Kärnten</td>
-                      <td className="text-right">$63,542</td>
-                    </tr>
-                    <tr>
-                      <td>Mason Porter</td>
-                      <td>Chile</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$78,615</td>
-                    </tr>
-                    <tr>
-                      <td>Jon Porter</td>
-                      <td>Portugal</td>
-                      <td>Gloucester</td>
-                      <td className="text-right">$98,615</td>
-                    </tr>
+                    array.forEach(element => {
+                      
+                    });
                   </tbody>
                 </Table>
               </CardBody>
