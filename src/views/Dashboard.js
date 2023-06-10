@@ -1,11 +1,13 @@
 import React from "react";
-import Table from "./Tables";
-import Position from "components/Position/Index";
-import Unit from "components/Unit/Index";
 import FormEmployee from "components/FormEmployee/Index";
 import FormPosition from "components/FormPosition/Index";
 import FormUnit from "components/FormUnit/Index";
 import InformationEmployees from "components/InformationEmployees/Index";
+
+import TopEmployeesTable from "components/TopEmployeeTable";
+import PositionTable from "components/PositionTable/Index";
+import UnitTable from "components/UnitTable/Index";
+import EmployeesTable from "components/EmployeesTable";
 
 import { Card, Row, Col } from "reactstrap";
 
@@ -16,9 +18,16 @@ function Dashboard() {
         <InformationEmployees></InformationEmployees>
         <Row>
           <Col md="12">
+            <Card>
+              <TopEmployeesTable></TopEmployeesTable>
+            </Card>
+          </Col>
+        </Row>
+        <Row>
+          <Col md="12">
             <FormEmployee></FormEmployee>
             <Card>
-              <Table responsive></Table>
+              <EmployeesTable responsive></EmployeesTable>
             </Card>
           </Col>
         </Row>
@@ -26,7 +35,7 @@ function Dashboard() {
           <Col md="12">
             <FormUnit></FormUnit>
             <Card>
-              <Unit></Unit>
+              <UnitTable></UnitTable>
             </Card>
           </Col>
         </Row>
@@ -34,7 +43,7 @@ function Dashboard() {
           <Col md="12">
             <FormPosition></FormPosition>
             <Card>
-              <Position></Position>
+              <PositionTable></PositionTable>
             </Card>
           </Col>
         </Row>

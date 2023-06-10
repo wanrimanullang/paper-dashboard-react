@@ -11,9 +11,10 @@ const useUnit = (token) => {
       setIsLoading(true);
 
       try {
+        const Auth = localStorage.getItem('auth');
         const response = await axios.get('http://localhost:8000/api/units', {
           headers: {
-            Authorization: `Bearer 1|fN26BPUk1tdU855MRnqrtgJwf077wV7djwvHcAKw`,
+            Authorization: `Bearer ${Auth}`,
           },
         });
         setUnits(response.data.data.data);

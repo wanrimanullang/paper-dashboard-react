@@ -14,6 +14,7 @@ const useAuth = () => {
       });
 
       if (response.data.token) {
+        localStorage.setItem('auth', response.data.token);
         setIsLoggedIn(true);
       } else {
         setUsername('');
