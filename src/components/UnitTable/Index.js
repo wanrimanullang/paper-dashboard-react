@@ -1,35 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import useUnit from "hooks/Unit";
 import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardTitle,
-  Table,
   Row,
   Col,
+  FormGroup,
+  Label,
+  Input,
+  Table,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardBody,
 } from "reactstrap";
 
-function Unit() {
-  const { units, isLoading, error } = useUnit();
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
+function UnitPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const { units, isLoading, error } = useUnit(currentPage);
+
+  const handleChangePage = (e) => {
+    setCurrentPage(parseInt(e.target.value));
+  };
+
   return (
-    <>
-      <div className="content">
-        <Row>
-          <Col md="12">
-            <Card>
-              <CardHeader>
-                <CardTitle tag="h4">Table Unit</CardTitle>
-              </CardHeader>
-              <CardBody>
+    <div>
+      <Row>
+        <Col md="12">
+          <Card>
+            <FormGroup className="mx-5">
+              <Label for="page-dropdown">Page:</Label>
+              <Input
+                type="select"
+                id="page-dropdown"
+                value={currentPage}
+                onChange={handleChangePage}
+              >
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                {/* Add more options as needed */}
+              </Input>
+            </FormGroup>
+            <CardHeader>
+              <CardTitle tag="h4">Unit in Puri Bunda</CardTitle>
+            </CardHeader>
+            <CardBody>
+              {isLoading ? (
+                <p>Loading...</p>
+              ) : error ? (
+                <p>Error: {error.message}</p>
+              ) : (
                 <Table responsive>
-                  <thead className="text-primary">
+                  <thead>
                     <tr>
                       <th>Id</th>
                       <th>Name</th>
@@ -48,13 +69,13 @@ function Unit() {
                     ))}
                   </tbody>
                 </Table>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </div>
-    </>
+              )}
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
+    </div>
   );
 }
 
-export default Unit;
+export default UnitPage;

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useUnit = (token) => {
+const useUnit = (page) => {
   const [units, setUnits] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ const useUnit = (token) => {
 
       try {
         const Auth = localStorage.getItem('auth');
-        const response = await axios.get('http://localhost:8000/api/units', {
+        const response = await axios.get(`http://localhost:8000/api/units?page=${page}`, {
           headers: {
             Authorization: `Bearer ${Auth}`,
           },
@@ -26,7 +26,7 @@ const useUnit = (token) => {
     };
 
     fetchUnits();
-  }, [token]);
+  }, [page]);
 
   return { units, isLoading, error };
 };
