@@ -47,7 +47,7 @@ const InformationEmployees = ({ token }) => {
                 <Col md="8" xs="7">
                   <div className="numbers">
                     <p className="card-category">Employees Login</p>
-                    <CardTitle tag="p">200</CardTitle>
+                    <CardTitle tag="p">{employees.login_counts}</CardTitle>
                     <p />
                   </div>
                 </Col>

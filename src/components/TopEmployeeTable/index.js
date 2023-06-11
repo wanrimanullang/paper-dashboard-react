@@ -67,7 +67,7 @@ const TopEmployees = ({ token }) => {
                         <td>
                           {employee.jobPosition.map((position) => (
                             <div key={position.id}>
-                              <p>Position Name: {position.name}</p>
+                              <p>{position.name}</p>
                             </div>
                           ))}
                         </td>
